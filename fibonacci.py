@@ -31,15 +31,12 @@
 #   return recu #este return no entrega un valor. lo que hace es relanzar la recursion.el valor viene de f==0 o f==1
 
 def fibolst(s):
-  #lista = []
   if s == 0:
         lista = [0]
-        print(f"fibolist({s+1}) = {lista}") 
         return  lista # aca uno SIEMPRE debe poner lo que necesita como punto de partida del calculo
     
   if s == 1:
         lista = [0,1]
-        print(f"fibolist({s+1}) = {lista}") 
         return  lista # aca uno SIEMPRE debe poner lo que necesita como punto de partida del calculo  
         
   #print ("entra a recursion:", s)
@@ -47,13 +44,15 @@ def fibolst(s):
   # print ("sale de recursion:", s)
   # print("lista:", lista)
   #print(f"sumando {lista[-1]} y {lista[-2]} para hacer append")
-  #print(f"fiborecu({s}) = {lista[-1] + lista[-2]}")
+  #print(f"fibolist({s}) = {lista[-1] + lista[-2]}")
   lista.append(lista[-1] + lista[-2]) # est hace que el ultimo valor de la lista se sume al penultimo valor y lo adiciona al final de la lista.
-  print(f"fibolist({s+1}) = {lista}")
   return lista #este return  entrega la MISMA lista. El valor viene de f==0 o f==1  
 
+def imprfiborecu(s):
+     lista = fibolst(s)
+     print(f" fibonacci de {s} es {lista}")
    
-print(fibolst(5))
+imprfiborecu(5)
 
 
 '''El fiborecu funciona porque en la recursion, el ultimo que entra es el primero que se resuelve y sale. 
