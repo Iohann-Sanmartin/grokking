@@ -50,7 +50,7 @@ def fibolst(s):
 
 def imprfiborecu(s):
      lista = fibolst(s)
-     print(f" fibonacci de {s} es {lista}")
+     print(f" fibonacci de {s+1} es {lista}")
    
 imprfiborecu(5)
 
