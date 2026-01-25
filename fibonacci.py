@@ -16,27 +16,24 @@
 #fibcic(5)
 
 # implementacion de fibonacci con recursión
-def fiborecu(n):
-  fiblist = [0,1]
-  print(fiblist)
-  
-  if n == 0:
-    print("n = a cero. STOP")
-    return 0
-  
-  if n == 1:
-     print("n = a uno. STOP")
-     return 1
-  else:
-    print ("entra a recursion:", n)
-    recu = fiborecu(n-2) + fiborecu (n-1)
-    fiblist.append(recu)
-    print ("sale de recursion:", n)
-    print(recu)
-    return recu #este return no entrega un valor. lo que hace es relanzar la recursion.el valor viene de f==0 o f==1
-  
-  
-print(fiborecu(6))
+
+
+def fiborecu(s):
+   
+    if s == 1:
+        #print("base uno. STOP")
+        return [0,1]
+    
+    #print ("entra a recursion:", s)
+    lista = fiborecu(s-1)
+    #print ("sale de recursion:", s)
+    #print("lista:", lista)
+    #print(f"sumando {lista[-1]} y {lista[-2]} para hacer append")
+    lista.append(lista[-1] + lista[-2]) # est hace que el ultimo valor de la lista se sume al penultimo valor y lo adiciona al final de la lista.
+    #print("lista despues del append:", lista)
+    return lista #este return  entrega la MISMA lista. El valor viene de f==0 o f==1
+
+print(fiborecu(5))
 
 '''El fiborecu funciona porque en la recursion, el ultimo que entra es el primero que se resuelve y sale. 
 De esta forma recursion siempre baja por la izquierda (es decir, todos los fiborecu (n-2)),
