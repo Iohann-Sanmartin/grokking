@@ -45,14 +45,17 @@ def s(n):
 #Ejercicio 4 — Llamadas. Imprime llamadas
 def llamadasrecu(n):
     if n == 0: 
-        return n
+        return
     else: 
         print(llamadasrecu(n-1))
 
 llamadasrecu(5)
 
-def f(n): 
-    print(n) 
-    return f(n-1) if n>0 else None
+def f(n):
+    print(n)
+    if n > 0:
+        return f(n-1)
+    else:
+        return None
 
 #f(5)
