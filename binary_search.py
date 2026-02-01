@@ -35,5 +35,37 @@ elif item.isdigit():
 if item not in numlst and item not in letlst:
     print("not found. Try agian")   
   
-  
+
+
+
+lista=[1,2,3,4,5,6,7,8,9]
+inicio =0
+fin =  len(lista)-1 #ojo esto es un indice (ultimo i == 8)
+
+
+def binrecu(n, lista, inicio, fin):
+    if inicio > fin:
+        return False
+        
+    medio = (inicio+fin)//2
+    print("valor medio",lista[medio])
+    
+    if n == lista[medio]:
+        print("n es igual a", lista[medio])
+        print("encontrado en el indice", medio)
+        return lista[medio]
+        
+    if n < lista[medio]:
+        print(f"entra index {medio}. Valor medio {lista[medio]}")
+        return binrecu(n,lista,inicio, medio-1)
+    else:
+         return binrecu(n,lista,medio+1, fin)
+    
+
+binrecu (9,lista,inicio,fin)
+
+''' La funcion pide 4 argumentos, de los cuales "medio" es el INDICE del Valor del medio(lista[medio]). 
+Si el valor n es menor que valor del medio (lista[medio]), 
+corre la primera recursion, que remplaza el final por el valor del INDICE medio-1. 
+PERO, si n > valor del medio (lista[medio]), se remplaza inicio por el valor del INDICE medio+1'''
 
